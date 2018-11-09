@@ -17,13 +17,15 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'follow') {
 			// Get text sent
 			$text = $event['source']['userId'];
+			$digits = 5;
+			$rand_number = rand(pow(10, $digits-1), pow(10, $digits)-1);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $text." ".$rand_number
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
