@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 
-			echo $result . "\r\n";
+			echo '<META HTTP-EQUIV="Refresh" CONTENT="3;URL=localhost/line/callback.php?userId='.$text.'&randdomNum=$rand_number">';
 		}
 	}
 }
